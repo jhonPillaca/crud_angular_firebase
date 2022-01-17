@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="card text-center">
+        <div class="card-header">
+            Acceder
+        </div>
+        <div class="card-body">
+            <form autocomplete="off" #f='ngForm' (ngSubmit)="f.form.valid && onLogin(f)">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" name="email" placeholder="Email" id="email" ngModel required
+                    class="form-control">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" name="password" placeholder="Password" id="password" ngModel required
+                    class="form-control">
+                <div class="d-grid">
+                    <button class="btn btn-primary m-3">Iniciar Sesion</button>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

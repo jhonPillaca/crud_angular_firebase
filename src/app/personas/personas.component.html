@@ -1,0 +1,14 @@
+<div class="text-center">
+    <button class="button" (click)="irAgregar()">+</button>
+</div>
+<div class="container">
+    <div class="card text-center">
+        <div class="card-body">
+            <app-persona *ngFor="let persona of personas; let i = index" [persona]="persona" [indice]="i"></app-persona>
+        </div>
+
+    </div>
+
+</div> 
+
+ <router-outlet></router-outlet>

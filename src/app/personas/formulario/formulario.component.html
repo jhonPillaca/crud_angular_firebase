@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="card text-center">
+        <div class="card-header">
+            <p>Modo <b *ngIf="index !=null">Edit</b> <b *ngIf="index==null">Add</b> </p>
+        </div>
+        <div class="card-body">
+            <form autocomplete="off" #f="ngForm" (ngSubmit)="f.form.valid && onGuardarPersona()">
+
+                <label for="nombre" class="form-label">nombre</label>
+                <input type="text" id="nombre" name="nombre" [(ngModel)]="nombreInput" required class="form-control">
+
+                <label for="apellido" class="form-label">Apellido</label>
+                <input type="text" id="apellido" name="apellido" [(ngModel)]="apellidoInput" required
+                    class="form-control">
+
+                <label for="file">Foto</label>
+                <input type="file" id="file" class="input-file" (change)="onFileSelected($event)"  required>
+
+                <div class="card"><img [src]="imagenPreview" alt=""></div>
+                <div>
+                    <button type="submit" [disabled]="loading" class="button">{{(loading)? 'Cargando...': '+'}}</button>
+                    <button *ngIf="index !=null" class="buttonRed" type="submit"
+                        (click)="onEliminarPersona()">-</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</div>

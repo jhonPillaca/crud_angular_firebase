@@ -1,0 +1,12 @@
+<div class="item">
+    <ul>
+        <li>
+            <a 
+            [routerLink]="['/personas',indice]"
+            [queryParams]="{modoEdicion:'1'}"
+            
+            >{{persona.nombre}}{{persona.apellido}}
+            <img [src]="persona.imagen" (ngModel)="imagen" width="100%" alt=""></a>
+        </li>
+    </ul>
+</div>
